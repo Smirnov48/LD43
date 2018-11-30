@@ -14,10 +14,10 @@ class Intro extends Phaser.Scene {
 
 		this.matter.world.setBounds(0, -300, 960, 840);
 		var ldlogo = this.matter.add.image(50, -100, 'ldlogo');
-		ldlogo.setVelocityX(10);
+		ldlogo.setVelocityX(30);
 		ldlogo.setVelocityY(20);
 		ldlogo.setBounce(0.1);
-		ldlogo.setAngularVelocity(Math.random());
+		ldlogo.setAngularVelocity(3);
 
   		 this.matter.world.on('collisionstart', function (event, bodyA, bodyB) {
 			hitsound.play();
