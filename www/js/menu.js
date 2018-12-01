@@ -4,10 +4,8 @@ class Menu extends Phaser.Scene {
 		super( { key: 'Menu' });
 	}
 
-	preload() {
-	}
-
 	create () {
+
 	}
 
 	update(time, delta){

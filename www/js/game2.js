@@ -4,9 +4,6 @@ class Game2 extends Phaser.Scene {
 		super( { key: 'Game2'});
 	}
 
-	preload() {
-	}
-
 	create () {
 	}
 
