@@ -4,18 +4,12 @@ new Phaser.Game({
 	height	:540, //360
 	type	:Phaser.AUTO,
 	physics: {
-		default:"arcade",
-		arcade : {
-			gravity: {
-				y: 0
-			},
+		default: 'arcade',
+		arcade: {
+			gravity:0,
 			debug: false
-		},
-		/*
-		matter: {
-			debug: false
-		}*/
+		}
 	},
 	backgroundColor:0xD090D0,
-	scene: [Game, Menu]
+	scene: [Game]
 });
