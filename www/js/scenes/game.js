@@ -5,8 +5,9 @@ class Game extends Phaser.Scene {
 	}
 
 	preload () {
-		this.load.image('npc1', 'assets/зшвщк.png');
+		this.load.image('tree', 'assets/enemy.png');
 		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 60, frameHeight: 60 });
+		this.load.image('enemy', 'assets/tree.png');
 	}
 
 	create () {
@@ -15,6 +16,7 @@ class Game extends Phaser.Scene {
 		this.player = new Player(this);
 
 		this.enemy = new Enemy(this);
+		this.tree = new Tree(this);
 	}
 
 	update(time, delta){
