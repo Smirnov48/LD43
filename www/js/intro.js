@@ -7,6 +7,8 @@ class Intro extends Phaser.Scene {
 	preload() {
 		this.load.image("ldlogo", "assets/ldlogo.png");
 		this.load.audio('logohit', ['assets/logohit.wav']);
+		this.load.image('npc1', 'assets/зшвщк.png');
+		this.load.image('fon', 'assets/fonTest.png');
 	}
 
 	create () {
@@ -28,7 +30,7 @@ class Intro extends Phaser.Scene {
   			gm.scene.start('Game');
   		}, 5000);
 	}
-
+          
 	update(time, delta){
-	}
+}
 }
