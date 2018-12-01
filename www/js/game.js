@@ -16,9 +16,13 @@ preload () {
          nps11.setVelocityX(Math.random(20));
          nps11.setVelocityY(Math.random(20));
 
+		this.load.image('player', 'assets/krolik.png');
 	}
 
+		this.cameras.main.setBackgroundColor('rgba(255, 0, 0, 0.5)');
+		this.player = new Player(this);
 	update(time, delta){
+		this.player.update();
 	}
 
 }
