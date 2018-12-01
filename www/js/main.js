@@ -11,5 +11,5 @@ new Phaser.Game({
 		}
 	},
 	backgroundColor:0xD090D0,
-	scene: [Intro, Menu, Game, Game1]
+	scene: [Intro, Menu, Game]
 });
