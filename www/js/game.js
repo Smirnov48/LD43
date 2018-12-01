@@ -9,6 +9,7 @@ class Game extends Phaser.Scene {
 	}
 
 	create () {
+		//this.setBackgroundColor('rgba(255, 0, 0, 0.5)');
 		this.player = new Player(this);
 	}
 
