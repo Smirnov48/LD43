@@ -7,11 +7,14 @@ class Player {
 
 	update(time, delta){
 		if (this.keys.left.isDown) {
+			this.sprite.x -= 5;
 		} else if (this.keys.right.isDown) {
+			this.sprite.x += 5;
 		} else if (this.keys.up.isDown) {
+			this.sprite.y -= 5;
 		} else if (this.keys.down.isDown) {
-		} else {
-		}
+			this.sprite.y += 5;
+		} 
 	}
 
 }
