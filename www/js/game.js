@@ -7,7 +7,7 @@ class Game extends Phaser.Scene {
 	preload () {
 		this.load.image('fon', 'assets/fonTest.png');
 		this.load.image('npc1', 'assets/зшвщк.png');
-		this.load.image('player', 'assets/krolik.png');
+		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 60, frameHeight: 60 });
 	}
 
 	create () {
@@ -20,6 +20,7 @@ class Game extends Phaser.Scene {
 
 		this.cameras.main.setBackgroundColor('rgba(255, 0, 0, 0.5)');
 		this.player = new Player(this);
+
 	}
 
 	update(time, delta){
