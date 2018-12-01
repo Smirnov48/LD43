@@ -15,12 +15,10 @@ class Game extends Phaser.Scene {
 	create () {
 
   var wall11 = this.physics.add.staticGroup();
-	 wall11.setCollideWorldBounds(true);
 
                   wall11.create(300, 250, 'wall1');
                 wall11.create(600, 250, 'wall1');
-var wall2 = this.physics.add.staticGroup();
-	    wall2.setCollideWorldBounds(true);
+var wall12 = this.physics.add.staticGroup();
 
                 wall12.create(400, 250, 'wall2');
                 wall12.create(400, 650, 'wall2');
@@ -32,8 +30,8 @@ var wall2 = this.physics.add.staticGroup();
         npc11.setVelocityX(50);
         npc11.setVelocityY(50);
 
- this.physics.add.collider(npc11, wall1);
-this.physics.add.collider(npc11, wall2);
+ this.physics.add.collider(npc11, wall11);
+this.physics.add.collider(npc11, wall12);
 
 		this.cameras.main.setBackgroundColor('rgba(255, 0, 0, 0.5)');
 		this.player = new Player(this);
