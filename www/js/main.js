@@ -5,16 +5,10 @@ new Phaser.Game({
 	type	:Phaser.AUTO,
 	physics: {
 		default: 'matter',
-		arcade : {
-			gravity: {
-				y: 300
-			},
-			debug: false
-		},
 		matter: {
 			debug: false
 		}
 	},
 	backgroundColor:0xD090D0,
-	scene: [Intro, Menu, Game]
+	scene: [Intro, Menu, Game, Game1, Game2]
 });

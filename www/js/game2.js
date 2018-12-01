@@ -1,7 +1,7 @@
-class Menu extends Phaser.Scene {
+class Game2 extends Phaser.Scene {
 
 	constructor() {
-		super( { key: 'Menu' });
+		super( { key: 'Game2'});
 	}
 
 	preload() {
@@ -11,7 +11,6 @@ class Menu extends Phaser.Scene {
 	}
 
 	update(time, delta){
-			
 	}
 
 }

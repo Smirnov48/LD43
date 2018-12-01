@@ -22,6 +22,11 @@ class Intro extends Phaser.Scene {
   		 this.matter.world.on('collisionstart', function (event, bodyA, bodyB) {
 			hitsound.play();
 		});
+
+  		var gm = this;
+  		setInterval(function (){
+  			gm.scene.start('Game');
+  		}, 5000);
 	}
 
 	update(time, delta){
