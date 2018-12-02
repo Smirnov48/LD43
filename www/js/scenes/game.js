@@ -24,7 +24,38 @@ class Game extends Phaser.Scene {
 	}
 
 	render(){
+		var widthRender = 10;
+		var heightRender = 5;
+		for (var i = this.playerPosition.x - widthRender; i < this.playerPosition.x + widthRender; i++) {
+			for (var j = this.playerPosition.y - heightRender; j < this.playerPosition.y + heightRender; j++) {
+				var x = (i - this.playerPosition.x)  * 67;
+				var y = (j - this.playerPosition.y) * 67;
 
+				var tileCode = this.map.getTileCode(i, j);
+				switch (tileCode){
+					case Map.ID_TREE:
+					case Map.ID_GRASS:
+						new Grass(this, x, y);
+					break;
+					case Map.ID_WATER:
+						new Water(this, x, y);
+					break;
+				}
+			}
+		}
+		for (var i = this.playerPosition.x - widthRender; i < this.playerPosition.x + widthRender; i++) {
+			for (var j = this.playerPosition.y - heightRender; j < this.playerPosition.y + heightRender; j++) {
+				var x = (i - this.playerPosition.x)  * 67;
+				var y = (j - this.playerPosition.y) * 67;
+
+				var tileCode = this.map.getTileCode(i, j);
+				switch (tileCode){
+					case Map.ID_TREE:
+						new Tree(this, x, y);
+					break;				
+				}
+			}
+		}
 	}
 
 	update(time, delta){
