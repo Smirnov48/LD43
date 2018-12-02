@@ -1,19 +1,16 @@
-class Enemy1 {
+class Enemy {
 
 	constructor(game, x, y) {
-		this.sprite = game.physics.add.sprite(x, y, 'enemy11');
-		//npc11.setBounce(0.3);
-		//npc11.setCollideWorldBounds(true);
-		//npc11.setVelocityX(50);
-		//npc11.setVelocityY(50);
+		this.sprite = game.physics.add.sprite(x, y, 'enemy');
 	}
 
-	update(time, delta){
+	update(game, time, delta){
+		this.sprite.setDepth(1);
 	}
 
-move(x, y) {
+	move(x, y) {
 		this.sprite.x = x;
 		this.sprite.y = y;
-}
+	}
 
 }

@@ -6,9 +6,10 @@ class Game extends Phaser.Scene {
 
 	preload () {
 		this.load.image('map', 'assets/map.png');
-		this.load.image('enemy', 'assets/enemy.png');
 
 		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 55, frameHeight: 55 });
+
+		this.load.spritesheet('enemy', 'assets/enemy.png', { frameWidth: 70, frameHeight: 150 });
 
 		this.load.image('tree', 'assets/tree.png');
 		this.load.image('water', 'assets/water.png');
@@ -64,6 +65,10 @@ class Game extends Phaser.Scene {
 					case Map.ID_DEEPWATER:
 						this.poolObjects.placeDeepWater(x, y);						
 					break;
+					case Map.ID_ENEMY:
+						this.poolObjects.placeGrass(x, y);
+						this.poolObjects.makeEnemy(this, x, y, i + " " + j);
+					break;					
 				}
 			}
 		}
@@ -87,6 +92,8 @@ class Game extends Phaser.Scene {
 		this.player.update();
 		this.render(this.player.getPosition());
 		this.player.toTop();
+
+		this.poolObjects.update(this, time, delta);
 
 		if (this.keys.P.isDown) {
 			this.scene.start('TestAnim');

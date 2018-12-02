@@ -17,8 +17,8 @@ class PoolObjects {
 		this.beach = new Array();
 		this.deepWaterCount = 0;
 		this.deepWater = new Array();
-		this.enemy1Count = 0;
-        this.enemy1 = new Array();
+
+        this.enemies = {};
 	}
 
 	begin() {
@@ -27,7 +27,7 @@ class PoolObjects {
 		this.treeCount = 0;
 		this.beachCount = 0;
 		this.deepWaterCount = 0;
-		 this.enemy1Count = 0;
+		this.enemy1Count = 0;
 	}
 
 	end() {
@@ -47,14 +47,7 @@ class PoolObjects {
 				this.tree[i].move(-70, -70);
 			}
 		}
-
-
-        if (this.enemy1Count < this.enemy1.length) {
-			for(var i = this.enemy1Count; i < this.enemy1.length; i++) {
-				this.enemy1[i].move(-70, -70);
-			}
-		}
-		if (this.beachCount < this.beach.length) {
+ 		if (this.beachCount < this.beach.length) {
 			for(var i = this.beachCount; i < this.beach.length; i++) {
 				this.beach[i].move(-70, -70);
 			}
@@ -95,15 +88,6 @@ class PoolObjects {
 		this.treeCount++;
 	}
 
-    placeEnemy1(x, y) {
-		if (this.enemy1Count >= this.enemy1.length) {
-			this.enemy1.push(new Enemy1(this.game, x, y));
-		} else {
-			this.enemy1[this.enemy1Count].move(x,y);
-		}
-		this.enemy1Count++;
-	}
-
     placeBeach(x, y) {
 		if (this.beachCount >= this.beach.length) {
 			this.beach.push(new Beach(this.game, x, y));
@@ -122,7 +106,16 @@ class PoolObjects {
 		this.deepWaterCount++;
 	}
 
-
-
+	makeEnemy(game, x, y, id) {
+		if (!this.enemies[id]) {
+			this.enemies[id] = new Enemy(game, x, y);
+		}
+	}
+	
+	update(game, time, delta) {
+		for (var id in this.enemies) {
+			this.enemies[id].update(game, time, delta);
+		};
+	}
 
 }
