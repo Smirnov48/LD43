@@ -18,14 +18,19 @@ class Game extends Phaser.Scene {
 
 		this.map = new Map(this);
 
-		this.enemy = new Enemy(this);
-
 		this.player = new Player(this);
+
+		this.playerPosition = this.map.getStartPosition();
+	}
+
+	render(){
+
 	}
 
 	update(time, delta){
 		this.player.update();
-		this.enemy.update();
+
+		this.render();
 	}
 
 }

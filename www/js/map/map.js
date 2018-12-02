@@ -16,4 +16,14 @@ class Map {
 		}
 	}
 
+	getStartPosition (){
+		for (var i = 0; i < 150; i++) { 
+			for (var j = 0; j < 150; j++) { 
+				if (this.map[i][j] == Map.ID_START_POSITION) {
+					return { "x" : i, "y" : j };
+				}
+			}
+		}
+	}
+
 }
