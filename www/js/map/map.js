@@ -9,7 +9,11 @@ class Map {
 		Map.ID_GRASS = 0x4CFF00;
 		Map.ID_WATER = 0x0094FF;
 		Map.ID_BEACH = 0xFFF762;
-		Map.ID_DEEPWATER = 0x1500FF
+		Map.ID_DEEPWATER = 0x1500FF;
+		Map.ID_ROAD = 0xE887E3;
+		Map.ID_GRASSSTEP = 0x4D9BA0;
+		Map.ID_MOUNT = 0x918989;
+		Map.ID_MOUNTROAD = 0xFF0000;
 		Map.ID_START_POSITION = 0xFF00FF;
 
 		this.map = new Array();

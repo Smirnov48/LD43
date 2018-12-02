@@ -12,6 +12,13 @@ class TestAnim extends Phaser.Scene {
 		this.load.image('beach', 'assets/beach.png');
 		this.load.image('deepWater', 'assets/deepWater.png');
         this.load.image('poison1', 'assets/poison1.png');
+        this.load.image('road', 'assets/road.png');
+		this.load.image('grassStep', 'assets/grassStep.png');
+        this.load.image('mount', 'assets/Mount.png');
+        this.load.image('mountRoad', 'assets/MountRoad.png');
+
+
+
 
 		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 
