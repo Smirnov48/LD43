@@ -18,9 +18,9 @@ class Game extends Phaser.Scene {
 
 		this.map = new Map(this);
 
-		this.player = new Player(this);
-
 		this.playerPosition = this.map.getStartPosition();
+		this.render();
+		this.player = new Player(this);
 	}
 
 	render(){
@@ -28,11 +28,12 @@ class Game extends Phaser.Scene {
 		var heightRender = 5;
 		for (var i = this.playerPosition.x - widthRender; i < this.playerPosition.x + widthRender; i++) {
 			for (var j = this.playerPosition.y - heightRender; j < this.playerPosition.y + heightRender; j++) {
-				var x = (i - this.playerPosition.x)  * 67;
-				var y = (j - this.playerPosition.y) * 67;
+				var x = (i - this.playerPosition.x)  * 67 + 480 - 30;
+				var y = (j - this.playerPosition.y) * 67 + 270 - 30;
 
 				var tileCode = this.map.getTileCode(i, j);
 				switch (tileCode){
+					case Map.ID_START_POSITION:
 					case Map.ID_TREE:
 					case Map.ID_GRASS:
 						new Grass(this, x, y);
@@ -45,8 +46,8 @@ class Game extends Phaser.Scene {
 		}
 		for (var i = this.playerPosition.x - widthRender; i < this.playerPosition.x + widthRender; i++) {
 			for (var j = this.playerPosition.y - heightRender; j < this.playerPosition.y + heightRender; j++) {
-				var x = (i - this.playerPosition.x)  * 67;
-				var y = (j - this.playerPosition.y) * 67;
+				var x = (i - this.playerPosition.x)  * 67 + 480 - 30;
+				var y = (j - this.playerPosition.y) * 67 + 270 - 30;
 
 				var tileCode = this.map.getTileCode(i, j);
 				switch (tileCode){
@@ -61,7 +62,6 @@ class Game extends Phaser.Scene {
 	update(time, delta){
 		this.player.update();
 
-		this.render();
 	}
 
 }
