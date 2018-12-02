@@ -15,17 +15,11 @@ class Enemy {
 
 		var playerPos = player.getPosition();
 
-		this.coords.r_x +=  (playerPos.r_x - this.coords.r_x)/256;
-		this.coords.r_y +=  (playerPos.r_y - this.coords.r_y)/256;
+		this.coords.r_x +=  (playerPos.r_x - this.coords.r_x) / 128;
+		this.coords.r_y +=  (playerPos.r_y - this.coords.r_y) / 128;
 
-
-		var i = Math.floor(this.coords.r_x/ 67);
-		var j = Math.floor(this.coords.r_y / 67);
-		var offsetX = Math.floor(this.coords.r_x % 67);
-		var offsetY = Math.floor(this.coords.r_y % 67);
-
-		this.sprite.x =  (i - playerPos.x)  * 67 + 480 - 30 + offsetX;
-		this.sprite.y =  (j - playerPos.y) * 67 + 270 - 30 + offsetY;
+		this.sprite.x = this.coords.r_x - playerPos.r_x + 480 - 15;
+		this.sprite.y = this.coords.r_y - playerPos.r_y + 270 - 50;
 	}
 
 }
