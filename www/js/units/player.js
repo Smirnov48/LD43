@@ -36,14 +36,23 @@ class Player {
 			frameRate: 10,
 			repeat: -1
 		});
-		
+
+		game.anims.create({
+			key: 'playerRun',
+			frames: game.anims.generateFrameNumbers('playerRun', { start:0, end:1 }),
+			frameRate: 10,
+			repeat: -1
+		});
+
 	}
 
 	update(time, delta){
 		if (this.keys.left.isDown || this.keysWASD.A.isDown) {
+			this.sprite.anims.play('playerRun', true);
 			//this.sprite.anims.play('left', true);
 			this.coords.r_x -= 3;
 		} else if (this.keys.right.isDown || this.keysWASD.D.isDown) {
+			this.sprite.anims.play('playerRun', true);
 			//this.sprite.anims.play('right', true);
 			this.coords.r_x += 3;
 		} else if (this.keys.up.isDown || this.keysWASD.W.isDown) {

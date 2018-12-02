@@ -11,6 +11,8 @@ class Game extends Phaser.Scene {
 		this.load.image('tree', 'assets/tree.png');
 		this.load.image('water', 'assets/water.png');
 		this.load.image('grass', 'assets/grass.png');
+
+		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 	}
 
 	create () {
