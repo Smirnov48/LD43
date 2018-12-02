@@ -17,10 +17,10 @@ class PoolObjects {
 		this.beach = new Array();
 		this.deepWaterCount = 0;
 		this.deepWater = new Array();
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 
         this.enemies = {};
-=======
+//=======
 		this.enemy1Count = 0;
         this.enemy1 = new Array();
         this.grassStepCount = 0;
@@ -32,7 +32,7 @@ class PoolObjects {
         this.roadCount = 0;
         this.road = new Array();
 
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	}
 
 	begin() {
@@ -41,15 +41,15 @@ class PoolObjects {
 		this.treeCount = 0;
 		this.beachCount = 0;
 		this.deepWaterCount = 0;
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 		this.enemy1Count = 0;
-=======
+//=======
 		 this.enemy1Count = 0;
 		 this.grassStepCount = 0;
 		 this.mountRoad = 0;
 		 this.mount = 0;
 		 this.road = 0;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	}
 
 	end() {
@@ -156,19 +156,7 @@ class PoolObjects {
 		this.deepWaterCount++;
 	}
 
-<<<<<<< Updated upstream
-	makeEnemy(game, x, y, i, j) {
-		if (!this.enemies[i + " " + j]) {
-			this.enemies[i + " " + j] = new Enemy(game, x, y, i, j);
-		}
-	}
-	
-	update(game, time, delta, player) {
-		for (var id in this.enemies) {
-			this.enemies[id].update(game, time, delta, player);
-		};
-=======
-    placeMount(x, y) {
+	 placeMount(x, y) {
 		if (this.mountCount >= this.mount.length) {
 			this.mount.push(new Mount(this.game, x, y));
 		} else {
@@ -193,15 +181,27 @@ class PoolObjects {
 			this.grassStep[this.grassStepCount].move(x,y);
 		}
 		this.grassStepCount++;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 	}
-
-    placeRoad(x, y) {
+  placeRoad(x, y) {
 		if (this.roadCount >= this.road.length) {
 			this.road.push(new Road(this.game, x, y));
 		} else {
 			this.road[this.roadCount].move(x,y);
 		}
 		this.roadCount++;
+	}
+
+//<<<<<<< Updated upstream
+	makeEnemy(game, x, y, i, j) {
+		if (!this.enemies[i + " " + j]) {
+			this.enemies[i + " " + j] = new Enemy(game, x, y, i, j);
+		}
+	}
+	
+	update(game, time, delta, player) {
+		for (var id in this.enemies) {
+			this.enemies[id].update(game, time, delta, player);
+		};
 	}
 }
