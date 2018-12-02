@@ -21,12 +21,11 @@ class Enemy {
 
 		var i = Math.floor(this.coords.r_x/ 67);
 		var j = Math.floor(this.coords.r_y / 67);
-
 		var offsetX = Math.floor(this.coords.r_x % 67);
 		var offsetY = Math.floor(this.coords.r_y % 67);
 
-		this.sprite.x =  (i - playerPos.x)  * 67 + 480 - 30 - offsetX;
-		this.sprite.y =  (j - playerPos.y) * 67 + 270 - 30 - offsetY;
+		this.sprite.x =  (i - playerPos.x)  * 67 + 480 - 30 + offsetX;
+		this.sprite.y =  (j - playerPos.y) * 67 + 270 - 30 + offsetY;
 	}
 
 }
