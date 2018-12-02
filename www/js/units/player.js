@@ -48,18 +48,16 @@ class Player {
 
 	update(time, delta){
 		if (this.keys.left.isDown || this.keysWASD.A.isDown) {
-			this.sprite.anims.play('playerRun', true);
-			//this.sprite.anims.play('left', true);
+			this.sprite.anims.play('left', true);
 			this.coords.r_x -= 3;
 		} else if (this.keys.right.isDown || this.keysWASD.D.isDown) {
-			this.sprite.anims.play('playerRun', true);
-			//this.sprite.anims.play('right', true);
+			this.sprite.anims.play('right', true);
 			this.coords.r_x += 3;
 		} else if (this.keys.up.isDown || this.keysWASD.W.isDown) {
-			//this.sprite.anims.play('up', true);
+			this.sprite.anims.play('down', true);
 			this.coords.r_y -= 3;
 		} else if (this.keys.down.isDown || this.keysWASD.S.isDown) {
-			//this.sprite.anims.play('down', true);
+			this.sprite.anims.play('up', true);
 			this.coords.r_y += 3;
 		} else {
 			this.sprite.anims.play('stop');

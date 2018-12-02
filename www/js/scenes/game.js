@@ -7,7 +7,7 @@ class Game extends Phaser.Scene {
 	preload () {
 		this.load.image('map', 'assets/map.png');
 		this.load.image('enemy', 'assets/enemy.png');
-		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 60, frameHeight: 60 });
+		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 55, frameHeight: 55 });
 		this.load.image('tree', 'assets/tree.png');
 		this.load.image('water', 'assets/water.png');
 		this.load.image('grass', 'assets/grass.png');
