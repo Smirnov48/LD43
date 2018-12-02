@@ -106,9 +106,9 @@ class PoolObjects {
 		this.deepWaterCount++;
 	}
 
-	makeEnemy(game, x, y, id) {
-		if (!this.enemies[id]) {
-			this.enemies[id] = new Enemy(game, x, y);
+	makeEnemy(game, x, y, i, j) {
+		if (!this.enemies[i + " " + j]) {
+			this.enemies[i + " " + j] = new Enemy(game, x, y, i, j);
 		}
 	}
 	

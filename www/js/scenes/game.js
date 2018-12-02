@@ -67,7 +67,7 @@ class Game extends Phaser.Scene {
 					break;
 					case Map.ID_ENEMY:
 						this.poolObjects.placeGrass(x, y);
-						this.poolObjects.makeEnemy(this, x, y, i + " " + j);
+						this.poolObjects.makeEnemy(this, x, y, i, j);
 					break;					
 				}
 			}
