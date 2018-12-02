@@ -40,17 +40,17 @@ class Player {
 	}
 
 	update(time, delta){
-		if (this.keys.left.isDown || this.keysWASD.S.isDown) {
-			this.sprite.anims.play('left', true);
+		if (this.keys.left.isDown || this.keysWASD.A.isDown) {
+			//this.sprite.anims.play('left', true);
 			this.coords.x--;
 		} else if (this.keys.right.isDown || this.keysWASD.D.isDown) {
-			this.sprite.anims.play('right', true);
+			//this.sprite.anims.play('right', true);
 			this.coords.x++;
 		} else if (this.keys.up.isDown || this.keysWASD.W.isDown) {
-			this.sprite.anims.play('up', true);
+			//this.sprite.anims.play('up', true);
 			this.coords.y--;
-		} else if (this.keys.down.isDown || this.keysWASD.A.isDown) {
-			this.sprite.anims.play('down', true);
+		} else if (this.keys.down.isDown || this.keysWASD.S.isDown) {
+			//this.sprite.anims.play('down', true);
 			this.coords.y++;
 		} else {
 			this.sprite.anims.play('stop');
@@ -59,6 +59,10 @@ class Player {
 
 	getPosition() {
 		return this.coords;
+	}
+
+	toTop() {
+		this.sprite.setDepth(1);
 	}
 
 }

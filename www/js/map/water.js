@@ -1,7 +1,11 @@
 class Water {
 
 	constructor(game, x, y) {
-		var npc11 = game.physics.add.sprite(x, y, 'water');
+		this.sprite = game.physics.add.sprite(x, y, 'water');
 	}
 
+	move(x, y) {
+		this.sprite.x = x;
+		this.sprite.y = y;
+	}
 }

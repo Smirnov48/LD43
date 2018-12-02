@@ -65,6 +65,7 @@ class Game extends Phaser.Scene {
 	update(time, delta){
 		this.player.update();
 		this.render(this.player.getPosition());
+		this.player.toTop();
 	}
 
 }

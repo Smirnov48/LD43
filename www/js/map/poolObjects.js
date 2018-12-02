@@ -5,9 +5,10 @@ class PoolObjects {
 
 	constructor(game) {
 		this.game = game;
+
 		this.grassCount = 0;
 		this.grass = new Array();
-		this.grassCount = 0;
+		this.waterCount = 0;
 		this.water = new Array();
 		this.treeCount = 0;
 		this.tree = new Array();
@@ -25,6 +26,16 @@ class PoolObjects {
 				this.grass[i].move(-70, -70);
 			}
 		}
+		if (this.waterCount < this.water.length) {
+			for(var i = this.waterCount; i < this.water.length; i++) {
+				this.water[i].move(-70, -70);
+			}
+		}
+		if (this.treeCount < this.tree.length) {
+			for(var i = this.treeCount; i < this.tree.length; i++) {
+				this.tree[i].move(-70, -70);
+			}
+		}
 	}
 
 	placeGrass(x, y) {
@@ -37,11 +48,21 @@ class PoolObjects {
 	}
 
 	placeWater(x, y) {
-		
+		if (this.waterCount >= this.water.length) {
+			this.water.push(new Water(this.game, x, y));
+		} else {
+			this.water[this.waterCount].move(x,y);
+		}
+		this.waterCount++;
 	}
 
 	placeTree(x, y) {
-
+		if (this.treeCount >= this.tree.length) {
+			this.tree.push(new Tree(this.game, x, y));
+		} else {
+			this.tree[this.treeCount].move(x,y);
+		}
+		this.treeCount++;
 	}
 
 }

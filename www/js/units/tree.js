@@ -1,10 +1,11 @@
 class Tree {
 
 	constructor(game, x, y) {
-		var npc11 = game.physics.add.sprite(x, y, 'tree');
+		this.sprite = game.physics.add.sprite(x, y, 'tree');
 	}
 
-	update(time, delta){
+	move(x, y) {
+		this.sprite.x = x;
+		this.sprite.y = y;
 	}
-
 }
