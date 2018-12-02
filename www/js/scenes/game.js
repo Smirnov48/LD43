@@ -27,11 +27,18 @@ class Game extends Phaser.Scene {
 	render(playerPosition){
 		this.poolObjects.begin();
 		var widthRender = 10;
-		var heightRender = 5;
+		var heightRender = 9;
+
+		playerPosition.x = Math.floor(playerPosition.r_x / 67);
+		playerPosition.y = Math.floor(playerPosition.r_y / 67);
+
+		var offsetX = Math.floor(playerPosition.r_x % 67);
+		var offsetY = Math.floor(playerPosition.r_y % 67);
+
 		for (var i = playerPosition.x - widthRender; i < playerPosition.x + widthRender; i++) {
 			for (var j = playerPosition.y - heightRender; j < playerPosition.y + heightRender; j++) {
-				var x = (i - playerPosition.x)  * 67 + 480 - 30;
-				var y = (j - playerPosition.y) * 67 + 270 - 30;
+				var x = (i - playerPosition.x)  * 67 + 480 - 30 - offsetX;
+				var y = (j - playerPosition.y) * 67 + 270 - 30 - offsetY;
 
 				var tileCode = this.map.getTileCode(i, j);
 				switch (tileCode){
@@ -48,8 +55,8 @@ class Game extends Phaser.Scene {
 		}
 		for (var i = playerPosition.x - widthRender; i < playerPosition.x + widthRender; i++) {
 			for (var j = playerPosition.y - heightRender; j < playerPosition.y + heightRender; j++) {
-				var x = (i - playerPosition.x)  * 67 + 480 - 30;
-				var y = (j - playerPosition.y) * 67 + 270 - 30;
+				var x = (i - playerPosition.x)  * 67 + 480 - 30 - offsetX;
+				var y = (j - playerPosition.y) * 67 + 270 - 30 - offsetY;
 
 				var tileCode = this.map.getTileCode(i, j);
 				switch (tileCode){
