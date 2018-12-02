@@ -7,10 +7,14 @@ class Game extends Phaser.Scene {
 	preload () {
 		this.load.image('map', 'assets/map.png');
 		this.load.image('enemy', 'assets/enemy.png');
+
 		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 55, frameHeight: 55 });
+
 		this.load.image('tree', 'assets/tree.png');
 		this.load.image('water', 'assets/water.png');
 		this.load.image('grass', 'assets/grass.png');
+		this.load.image('deepWater', 'assets/deepWater.png');
+		this.load.image('beach', 'assets/beach.png');
 
 		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 	}
@@ -53,6 +57,12 @@ class Game extends Phaser.Scene {
 					break;
 					case Map.ID_WATER:
 						this.poolObjects.placeWater(x, y);						
+					break;
+					case Map.ID_BEACH:
+						this.poolObjects.placeBeach(x, y);						
+					break;
+					case Map.ID_DEEPWATER:
+						this.poolObjects.placeDeepWater(x, y);						
 					break;
 				}
 			}
