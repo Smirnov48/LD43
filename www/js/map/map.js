@@ -5,8 +5,11 @@ class Map {
 		Map.TILE_HEIGHT = 67;
 
 		Map.ID_TREE = 0x267F00;
+		Map.ID_ENEMY1 = 0xBEB951;
 		Map.ID_GRASS = 0x4CFF00;
 		Map.ID_WATER = 0x0094FF;
+		Map.ID_BEACH = 0xFFF762;
+		Map.ID_DEEPWATER = 0x1500FF
 		Map.ID_START_POSITION = 0xFF00FF;
 
 		this.map = new Array();

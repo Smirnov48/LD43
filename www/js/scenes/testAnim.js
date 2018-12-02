@@ -6,11 +6,13 @@ class TestAnim extends Phaser.Scene {
 
 	preload () {
 		this.load.image('map', 'assets/map.png');
-		this.load.image('enemy', 'assets/enemy.png');
 		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 60, frameHeight: 60 });
 		this.load.image('tree', 'assets/tree.png');
 		this.load.image('water', 'assets/water.png');
 		this.load.image('grass', 'assets/grass.png');
+		this.load.image('enemy11', 'assets/enemy.png');
+		this.load.image('beach', 'assets/beach.png');
+		this.load.image('deepWater', 'assets/deepWater.png');
 
 		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 
@@ -20,6 +22,7 @@ class TestAnim extends Phaser.Scene {
 	create () {
 		this.cameras.main.setBackgroundColor('rgba(0, 255, 0, 0.5)');
 		new Tree(this, 300, 300);
+		new Enemy1(this, 400, 500);
 
 		this.sprite = this.physics.add.sprite(450, 240, 'playerRun');
 
