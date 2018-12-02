@@ -1,6 +1,8 @@
 class Player {
 
-	constructor(game) {
+	constructor(game, spawnCoord) {
+		this.coords = spawnCoord;
+
 		this.sprite = game.physics.add.sprite(450, 240, 'player');
 		this.keys = game.input.keyboard.createCursorKeys();
 		this.keysWASD = game.input.keyboard.addKeys('W,A,S,D'); 
@@ -40,15 +42,23 @@ class Player {
 	update(time, delta){
 		if (this.keys.left.isDown || this.keysWASD.S.isDown) {
 			this.sprite.anims.play('left', true);
+			this.coords.x--;
 		} else if (this.keys.right.isDown || this.keysWASD.D.isDown) {
 			this.sprite.anims.play('right', true);
+			this.coords.x++;
 		} else if (this.keys.up.isDown || this.keysWASD.W.isDown) {
 			this.sprite.anims.play('up', true);
+			this.coords.y--;
 		} else if (this.keys.down.isDown || this.keysWASD.A.isDown) {
 			this.sprite.anims.play('down', true);
+			this.coords.y++;
 		} else {
 			this.sprite.anims.play('stop');
 		}
+	}
+
+	getPosition() {
+		return this.coords;
 	}
 
 }
