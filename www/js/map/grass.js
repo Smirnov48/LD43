@@ -1,7 +1,12 @@
 class Grass {
 
 	constructor(game, x, y) {
-		var npc11 = game.physics.add.sprite(x, y, 'grass');
+		this.sprite = game.physics.add.sprite(x, y, 'grass');
+	}
+
+	move(x, y) {
+		this.sprite.x = x;
+		this.sprite.y = y;
 	}
 
 }

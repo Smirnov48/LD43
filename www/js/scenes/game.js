@@ -25,6 +25,7 @@ class Game extends Phaser.Scene {
 	}
 
 	render(playerPosition){
+		this.poolObjects.begin();
 		var widthRender = 10;
 		var heightRender = 5;
 		for (var i = playerPosition.x - widthRender; i < playerPosition.x + widthRender; i++) {
@@ -58,11 +59,12 @@ class Game extends Phaser.Scene {
 				}
 			}
 		}
+		this.poolObjects.end();
 	}
 
 	update(time, delta){
 		this.player.update();
-		//this.render(this.player.getPosition());
+		this.render(this.player.getPosition());
 	}
 
 }
