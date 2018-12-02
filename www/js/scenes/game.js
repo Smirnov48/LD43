@@ -23,7 +23,7 @@ class Game extends Phaser.Scene {
 		this.render(spawnPlayerCoord);
 		this.player = new Player(this, spawnPlayerCoord);
 
-		this.keysWASD = this.input.keyboard.addKeys('P'); 
+		this.keys = this.input.keyboard.addKeys('P'); 
 	}
 
 	render(playerPosition){
@@ -76,7 +76,7 @@ class Game extends Phaser.Scene {
 		this.render(this.player.getPosition());
 		this.player.toTop();
 
-		if (this.keysWASD.P.isDown) {
+		if (this.keys.P.isDown) {
 			this.scene.start('TestAnim');
 		}
 	}
