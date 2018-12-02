@@ -1,9 +1,7 @@
 class TestAnim extends Phaser.Scene {
-
 	constructor() {
 		super( { key: 'TestAnim'});
 	}
-
 	preload () {
 		this.load.image('map', 'assets/map.png');
 		this.load.spritesheet('player', 'assets/krolikk.png', { frameWidth: 60, frameHeight: 60 });
@@ -13,6 +11,7 @@ class TestAnim extends Phaser.Scene {
 		this.load.image('enemy11', 'assets/enemy.png');
 		this.load.image('beach', 'assets/beach.png');
 		this.load.image('deepWater', 'assets/deepWater.png');
+        this.load.image('poison1', 'assets/poison1.png');
 
 		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 
@@ -24,6 +23,11 @@ class TestAnim extends Phaser.Scene {
 		new Tree(this, 300, 300);
 		new Enemy1(this, 400, 500);
 
+        for (var i = 0; i < 50; i++) {
+                  var poison11 = this.physics.add.image(Phaser.Math.FloatBetween(100,1500), 100 + i * 30, 'poison');
+                     this.physics.add.collider(player, poison11, hitPoison, null, this);
+                            }
+
 		this.sprite = this.physics.add.sprite(450, 240, 'playerRun');
 
 		this.anims.create({
@@ -33,8 +37,15 @@ class TestAnim extends Phaser.Scene {
 			repeat: -1
 		});
 		this.sprite.anims.play('playerRun', true);
-	}
 
+function hitPoison(player, poison11) {
+                    poison11.disableBody(true, true);
+                }
+
+
+
+		
+	}
 
 	update(time, delta){
 		if (this.keys.Y.isDown) {
