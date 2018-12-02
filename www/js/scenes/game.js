@@ -93,7 +93,7 @@ class Game extends Phaser.Scene {
 		this.render(this.player.getPosition());
 		this.player.toTop();
 
-		this.poolObjects.update(this, time, delta);
+		this.poolObjects.update(this, time, delta, this.player);
 
 		if (this.keys.P.isDown) {
 			this.scene.start('TestAnim');

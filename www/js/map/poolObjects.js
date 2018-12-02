@@ -112,9 +112,9 @@ class PoolObjects {
 		}
 	}
 	
-	update(game, time, delta) {
+	update(game, time, delta, player) {
 		for (var id in this.enemies) {
-			this.enemies[id].update(game, time, delta);
+			this.enemies[id].update(game, time, delta, player);
 		};
 	}
 

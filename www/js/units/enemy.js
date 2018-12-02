@@ -4,13 +4,13 @@ class Enemy {
 		this.sprite = game.physics.add.sprite(x, y, 'enemy');
 	}
 
-	update(game, time, delta){
+	update(game, time, delta, player){
 		this.sprite.setDepth(1);
-	}
 
-	move(x, y) {
-		this.sprite.x = x;
-		this.sprite.y = y;
+		var playerPos = player.getScreenPosition();
+
+		this.sprite.x += (playerPos.x - this.sprite.x)/256;
+		this.sprite.y += (playerPos.y - this.sprite.y)/256;
 	}
 
 }

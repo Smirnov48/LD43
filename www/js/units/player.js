@@ -72,4 +72,8 @@ class Player {
 		this.sprite.setDepth(1);
 	}
 
+	getScreenPosition() {
+		return { "x" : this.sprite.x, "y" : this.sprite.y}
+	}
+
 }
