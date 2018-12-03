@@ -8,4 +8,8 @@ class Tree {
 		this.sprite.x = x;
 		this.sprite.y = y;
 	}
+
+	toTop() {
+		this.sprite.setDepth(1);
+	}
 }

@@ -123,6 +123,7 @@ class PoolObjects {
 		} else {
 			this.tree[this.treeCount].move(x,y);
 		}
+		this.tree[this.treeCount].toTop();
 		this.treeCount++;
 	}
 
