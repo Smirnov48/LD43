@@ -17,6 +17,11 @@ class Game extends Phaser.Scene {
 		this.load.image('deepWater', 'assets/deepWater.png');
 		this.load.image('beach', 'assets/beach.png');
 
+		this.load.image('grassStep', 'assets/grassStep.png');
+		this.load.image('road', 'assets/road.png');
+		this.load.image('mount', 'assets/mount.png');
+		this.load.image('mountRoad', 'assets/mountRoad.png');
+
 		this.load.spritesheet('playerRun', 'assets/run.png', { frameWidth: 55, frameHeight: 55 });
 	}
 
@@ -64,6 +69,18 @@ class Game extends Phaser.Scene {
 					break;
 					case Map.ID_DEEPWATER:
 						this.poolObjects.placeDeepWater(x, y);						
+					break;
+					case Map.ID_ROAD:
+						this.poolObjects.placeRoad(x, y);
+					break;
+					case Map.ID_GRASSSTEP:
+						this.poolObjects.placeGrassStep(x, y);
+					break;
+					case Map.ID_MOUNT:
+						this.poolObjects.placeMount(x, y);
+					break;
+					case Map.ID_MOUNTROAD:
+						this.poolObjects.placeMountRoad(x, y);
 					break;
 					case Map.ID_ENEMY:
 						this.poolObjects.placeGrass(x, y);

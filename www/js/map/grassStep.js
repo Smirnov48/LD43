@@ -1,4 +1,4 @@
-class grassStep {
+class GrassStep {
 
 	constructor(game, x, y) {
 		this.sprite = game.physics.add.sprite(x, y, 'grassStep');

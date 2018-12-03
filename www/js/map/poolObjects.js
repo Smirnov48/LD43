@@ -1,38 +1,36 @@
 class PoolObjects {
-//new Grass(this, x, y);
-//new Water(this, x, y);
-//new Tree(this, x, y);
 
 	constructor(game) {
 		this.game = game;
 
-
 		this.grassCount = 0;
 		this.grass = new Array();
+
 		this.waterCount = 0;
 		this.water = new Array();
+
 		this.treeCount = 0;
 		this.tree = new Array();
+
 		this.beachCount = 0;
 		this.beach = new Array();
+
 		this.deepWaterCount = 0;
 		this.deepWater = new Array();
-//<<<<<<< Updated upstream
 
-        this.enemies = {};
-//=======
-		this.enemy1Count = 0;
-        this.enemy1 = new Array();
         this.grassStepCount = 0;
         this.grassStep = new Array();
+
         this.mountCount = 0;
         this.mount = new Array();
+
         this.mountRoadCount = 0;
         this.mountRoad = new Array();
+
         this.roadCount = 0;
         this.road = new Array();
 
-//>>>>>>> Stashed changes
+        this.enemies = {};
 	}
 
 	begin() {
@@ -41,15 +39,11 @@ class PoolObjects {
 		this.treeCount = 0;
 		this.beachCount = 0;
 		this.deepWaterCount = 0;
-//<<<<<<< Updated upstream
-		this.enemy1Count = 0;
-//=======
-		 this.enemy1Count = 0;
-		 this.grassStepCount = 0;
-		 this.mountRoad = 0;
-		 this.mount = 0;
-		 this.road = 0;
-//>>>>>>> Stashed changes
+		this.enemyCount = 0;
+		this.grassStepCount = 0;
+		this.mountRoadCount = 0;
+		this.mountCount = 0;
+		this.roadCount = 0;
 	}
 
 	end() {
@@ -70,7 +64,7 @@ class PoolObjects {
 				this.tree[i].move(-70, -70);
 			}
 		}
- 		if (this.beachCount < this.beach.length) {
+		if (this.beachCount < this.beach.length) {
 			for(var i = this.beachCount; i < this.beach.length; i++) {
 				this.beach[i].move(-70, -70);
 			}
@@ -79,15 +73,15 @@ class PoolObjects {
 			for(var i = this.deepWaterCount; i < this.deepWater.length; i++) {
 				this.deepWater[i].move(-70, -70);
 			}
+		}
 
-        if (this.mountCount < this.mount.length) {
+		if (this.mountCount < this.mount.length) {
 			for(var i = this.mountCount; i < this.mount.length; i++) {
 				this.mount[i].move(-70, -70);
 			}
 		}
 
-
-        if (this.mountRoadCount < this.mountRoad.length) {
+		if (this.mountRoadCount < this.mountRoad.length) {
 			for(var i = this.mountRoadCount; i < this.mountRoad.length; i++) {
 				this.mountRoad[i].move(-70, -70);
 			}
@@ -101,14 +95,8 @@ class PoolObjects {
 			for(var i = this.roadCount; i < this.road.length; i++) {
 				this.road[i].move(-70, -70);
 			}
-
-
-
-
-
-}
-}
-   }    
+		}
+	}    
 
 
 	placeGrass(x, y) {
@@ -181,9 +169,9 @@ class PoolObjects {
 			this.grassStep[this.grassStepCount].move(x,y);
 		}
 		this.grassStepCount++;
-//>>>>>>> Stashed changes
 	}
-  placeRoad(x, y) {
+	
+	placeRoad(x, y) {
 		if (this.roadCount >= this.road.length) {
 			this.road.push(new Road(this.game, x, y));
 		} else {
@@ -192,7 +180,6 @@ class PoolObjects {
 		this.roadCount++;
 	}
 
-//<<<<<<< Updated upstream
 	makeEnemy(game, x, y, i, j) {
 		if (!this.enemies[i + " " + j]) {
 			this.enemies[i + " " + j] = new Enemy(game, x, y, i, j);
