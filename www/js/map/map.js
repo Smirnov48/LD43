@@ -17,10 +17,10 @@ class Map {
 		Map.ID_START_POSITION = 0xFF00FF;
 
 		this.map = new Array();
-		for (var i = 0; i < 150; i++) { 
+		for (var i = 0; i < 200; i++) { 
 			this.map[i] = new Array();
 
-			for (var j = 0; j < 150; j++) { 
+			for (var j = 0; j < 200; j++) { 
 				this.map[i][j] = game.textures.getPixel(i, j, 'map')._color;
 			}
 		}
